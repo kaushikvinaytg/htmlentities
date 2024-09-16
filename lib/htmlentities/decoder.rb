@@ -22,7 +22,7 @@ class HTMLEntities
 
   private
     def prepare(string) #:nodoc:
-      string.to_s.encode(Encoding::UTF_8)
+      string.to_s.encode(Encoding::UTF_8, invalid: :replace, undef: :replace, replace: '')
     end
 
     def entity_regexp
